@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+*{padding:0; margin:0; box-sizing: border-box;}
+
+body {background:url(/img/hatter.jpg) ; color:grey;}
+
+main, header,nav,article,div,section { border: 1px solid lightgrey;
+                                       padding: 10px}
+nav a { font-weight: bold; 
+        text-decoration: none; 
+        color: rgb(54, 54, 54);
+        text-align: center; 
+        padding: 5px;
+        display:inline-block;
+        width:150px;}
+
+nav a:hover{background: rgb(241, 167, 6); color:rgb(250, 244, 244)}
+
+nav li {list-style-type: none; 
+        
+        display:inline-block;}
+
+footer{text-align: center;}
+
+/*GRID OLDALSZERKEZET*/
+
+
+header {
+    grid-area: h;
+}
+
+nav {grid-area: n;
+}
+
+article {
+    grid-area: a;
+}
+
+section {
+    grid-area: s;
+}
+
+.bal {
+    grid-area: b;
+}
+
+.jobb {
+    grid-area: j;
+}
+footer {
+    grid-area: f;
+}
+
+main {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "h h h h h h h h h h h h"
+                         "n n n n n n n n n n n n"
+                         "b b a a a a a a a j j j"
+                         "f f f f f f f f f f f f";
+}
+
+nav ul { display: grid; 
+    /* itt megadtuk, hogy hány oszlop legyen a gridben*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*felveszi az elemek szélességét. ha 1fr helyett auto-t írnánk, akkor egyforma szélességben rendezné el a menüpontokat. */
+  }
+
+  img {
+    max-width: 400px;
+  }
